@@ -1,51 +1,51 @@
-/* /Layout/MainLayout.razor.rz.scp.css */
-body[b-ojyy5v3png] {
+/* /Features/Layout/MainLayout.razor.rz.scp.css */
+body[b-1q1x1bay2d] {
     margin: 0;
 }
-.page[b-ojyy5v3png] {
+.page[b-1q1x1bay2d] {
     display: flex;
 }
-.sidebar[b-ojyy5v3png] {
+.sidebar[b-1q1x1bay2d] {
     height: 100vh;
     border-right: 1px solid gray;
 }
-main[b-ojyy5v3png] {
+main[b-1q1x1bay2d] {
     flex-grow: 1;
     display: flex;
     justify-content: center;
 }
-/* /Layout/NavMenu.razor.rz.scp.css */
-aside[b-lmpb2t4s9t] {
+/* /Features/Layout/NavMenu.razor.rz.scp.css */
+aside[b-vmvyaij0im] {
 	display: flex;
 	padding-right: 10px;
 }
 
-aside nav[b-lmpb2t4s9t] {
+aside nav[b-vmvyaij0im] {
 	width: 250px;
 	margin-top: 20px;
 }
 
-aside ul[b-lmpb2t4s9t] {
+aside ul[b-vmvyaij0im] {
 	padding-left: 0px;
 	margin-top: 0px;
 }
 
-aside li[b-lmpb2t4s9t] {
+aside li[b-vmvyaij0im] {
 	list-style-type: none;
 	border-bottom: 1px solid lightblue;
 	padding: 15px;
 	padding-left: 60px;
 }
 
-aside span[b-lmpb2t4s9t] {
+aside span[b-vmvyaij0im] {
 	font-weight: 900;
 }
 
-aside nav a[b-lmpb2t4s9t] {
+aside nav a[b-vmvyaij0im] {
 	text-decoration: none;
 	color: #222;
 }
 
-aside nav li:hover[b-lmpb2t4s9t] {
+aside nav li:hover[b-vmvyaij0im] {
 	background-color: #d3d3d3;
 }

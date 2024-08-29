@@ -823,8 +823,6 @@
 /Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.flashcardApp.Client.props
 /Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.flashcardApp.Client.props
 /Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/staticwebassets.pack.json
-/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/scopedcss/Layout/MainLayout.razor.rz.scp.css
-/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/scopedcss/Layout/NavMenu.razor.rz.scp.css
 /Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/scopedcss/bundle/flashcardApp.Client.styles.css
 /Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/scopedcss/projectbundle/flashcardApp.Client.bundle.scp.css
 /Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/p6ih8fyh8j.gz
@@ -1038,3 +1036,5 @@
 /Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/refint/flashcardApp.Client.dll
 /Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/flashcardApp.Client.pdb
 /Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/ref/flashcardApp.Client.dll
+/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/scopedcss/Features/Layout/MainLayout.razor.rz.scp.css
+/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/scopedcss/Features/Layout/NavMenu.razor.rz.scp.css
