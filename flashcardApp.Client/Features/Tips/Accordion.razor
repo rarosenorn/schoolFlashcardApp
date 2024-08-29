@@ -1,0 +1,31 @@
+@page "/accordion"
+@rendermode InteractiveServer
+
+<div class="accordion">
+    @foreach(Item item in Items)
+    {
+        <div class="accordion-item">
+            <button @onclick="() => ToggleAccordionContent(item)" >&#x25BC; @item.Name</button>
+            @if(item.IsContentShown)
+            {
+                <div class="accordion-item-content">
+                    <p>@item.Content</p>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+[Parameter] public List<Item> Items {get; set;}
+private void ToggleAccordionContent(Item item)
+{
+    item.IsContentShown = !item.IsContentShown;
+}
+public class Item 
+{
+    public string Name {get; set;}
+    public string Content {get; set;}
+    public bool IsContentShown {get; set;}
+}
+}

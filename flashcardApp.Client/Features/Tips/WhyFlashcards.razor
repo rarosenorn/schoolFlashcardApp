@@ -1,0 +1,36 @@
+@page "/WhyFlashcards"
+
+<div class="whyflashcards">
+<p>The usual way of learning is putting information into your brain by attending a lecture, reading a book or watching a video and then apply that learning to
+    what you need the learning for, along the way you usually forget a large amount of the content you initially put into your brain. By putting
+    flashcards in between you will have a larger part of the initial information available when you need it.a
+
+    An example is with learning html, you might read a book about html and css and then start trying to build a website, but you will probably have forgotten
+    a large part of what you read, so when you need to create a table you have to look it up. If you read the book and afterwards do the relevant flashcards
+    you will be able to recall a larger part of the book when you need for example to create a table or a form.
+</p>
+<p>Extensive scientific litterature and anecdotes indicates that rereading and other passive ways of revising material are not very
+    effective.
+    Making use of active recall, spaced repitition and interleaving instead creates better results in understanding and memory retention, flashcards are one way to
+    utilize these concepts. 
+</p>
+<div class="whyflashcardsaccordion">
+    <Accordion Items="@Items"/>
+</div>
+</div>
+
+@code {
+    private List<Accordion.Item> Items {get; set;} = new() {
+        new Accordion.Item {Name = "Active recall", 
+                            Content = "Active recall is retrieving information from your brain as opposed to putting information into your brain, for example by rereading." +
+                                      "For example when when seeing the front of a flashcard and then remembering the backside from that cue. Active recall have been proven scientifically" + 
+                                      "To be a more effective way of revising something you need to learn."},
+        new Accordion.Item {Name = "Spaced repitition", 
+                            Content = "Spaced repitition is spacing out revision of a topic. So instead of spending 3 hours in one day revising a topic, you do 1 hour on day 1, 1 hour on day 7 and 1 hour on day 30." + 
+                                      "It's scientifically proven that the same amount of time spent spaced out like this rather than crammed increases understanding and retention. This can be done with flashcards by using" + 
+                                      "an algorithm that tells you when to do which flashcards."},
+        new Accordion.Item {Name = "Interleaving ", 
+                            Content = "Interleaving is the concept of studying related topics at the same time and has been proven to increase understanding and retention of all topics rather than studying one topic" + 
+                                      "first, then another afterwards. Interleaving can be utilized with flashcards by presenting flashcards from related topics interleaved."}
+    };
+}

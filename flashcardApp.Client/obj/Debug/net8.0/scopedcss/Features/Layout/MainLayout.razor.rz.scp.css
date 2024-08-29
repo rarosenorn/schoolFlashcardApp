@@ -1,0 +1,15 @@
+body[b-1q1x1bay2d] {
+    margin: 0;
+}
+.page[b-1q1x1bay2d] {
+    display: flex;
+}
+.sidebar[b-1q1x1bay2d] {
+    height: 100vh;
+    border-right: 1px solid gray;
+}
+main[b-1q1x1bay2d] {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}

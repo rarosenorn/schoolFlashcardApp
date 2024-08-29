@@ -1,0 +1,34 @@
+aside[b-vmvyaij0im] {
+	display: flex;
+	padding-right: 10px;
+}
+
+aside nav[b-vmvyaij0im] {
+	width: 250px;
+	margin-top: 20px;
+}
+
+aside ul[b-vmvyaij0im] {
+	padding-left: 0px;
+	margin-top: 0px;
+}
+
+aside li[b-vmvyaij0im] {
+	list-style-type: none;
+	border-bottom: 1px solid lightblue;
+	padding: 15px;
+	padding-left: 60px;
+}
+
+aside span[b-vmvyaij0im] {
+	font-weight: 900;
+}
+
+aside nav a[b-vmvyaij0im] {
+	text-decoration: none;
+	color: #222;
+}
+
+aside nav li:hover[b-vmvyaij0im] {
+	background-color: #d3d3d3;
+}

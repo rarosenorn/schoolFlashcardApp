@@ -1,0 +1,34 @@
+aside {
+	display: flex;
+	padding-right: 10px;
+}
+
+aside nav {
+	width: 250px;
+	margin-top: 20px;
+}
+
+aside ul {
+	padding-left: 0px;
+	margin-top: 0px;
+}
+
+aside li {
+	list-style-type: none;
+	border-bottom: 1px solid lightblue;
+	padding: 15px;
+	padding-left: 60px;
+}
+
+aside span {
+	font-weight: 900;
+}
+
+aside nav a {
+	text-decoration: none;
+	color: #222;
+}
+
+aside nav li:hover {
+	background-color: #d3d3d3;
+}
