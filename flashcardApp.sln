@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "flashcardApp.Client", "flashcardApp.Client\flashcardApp.Client.csproj", "{68DF84D3-24BD-4613-8FE7-3076F70A65A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "flashcardApp.Api", "flashcardApp.Api\flashcardApp.Api.csproj", "{D3D3A11C-FDBB-485D-BBE5-5382D7911EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "flashcardApp.Shared", "flashcardApp.Shared\flashcardApp.Shared.csproj", "{5595FDFB-D7FF-499F-B679-C980CB9DE9AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68DF84D3-24BD-4613-8FE7-3076F70A65A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68DF84D3-24BD-4613-8FE7-3076F70A65A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68DF84D3-24BD-4613-8FE7-3076F70A65A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68DF84D3-24BD-4613-8FE7-3076F70A65A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3D3A11C-FDBB-485D-BBE5-5382D7911EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3D3A11C-FDBB-485D-BBE5-5382D7911EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3D3A11C-FDBB-485D-BBE5-5382D7911EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3D3A11C-FDBB-485D-BBE5-5382D7911EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5595FDFB-D7FF-499F-B679-C980CB9DE9AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5595FDFB-D7FF-499F-B679-C980CB9DE9AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5595FDFB-D7FF-499F-B679-C980CB9DE9AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5595FDFB-D7FF-499F-B679-C980CB9DE9AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
