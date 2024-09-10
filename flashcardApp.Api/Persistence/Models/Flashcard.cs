@@ -1,4 +1,5 @@
-namespace flashcardApp.Models;
+namespace flashcardApp.Api.Persistence.Models;
+
 public class Flashcard
 {
     public int Id {get; set;}
@@ -6,6 +7,4 @@ public class Flashcard
     public string? Backside {get; set;}
     public string? SubTopic {get; set;}
     public int DeckId {get; set;}
-
-    public Flashcard flashcard {get; set;} = default!;
 }

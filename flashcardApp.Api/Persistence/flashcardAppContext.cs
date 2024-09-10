@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using flashcardApp.Models;
-namespace flashcardApp.Persistence;
+using flashcardApp.Api.Persistence.Models;
+namespace flashcardApp.Api.Persistence;
 
 public class DatabaseContext : DbContext 
 {

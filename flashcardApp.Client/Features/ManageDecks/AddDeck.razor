@@ -1,0 +1,58 @@
+@inject IMediator Mediator
+
+<div id="CreateDeck">
+    <button @onclick="ShowCreateDeck">
+        @if (_show)
+        {
+            <span>collapse</span>
+        }
+        else
+        {
+            <span>Add Deck</span>
+        }
+    </button>
+    @if (_show)
+    {
+        @if (_submitSuccessful)
+        {
+            <SuccessAlert Message="Your trail has been added successfully!" />
+        }
+        else if (_errorMessage is not null)
+        {
+            <ErrorAlert Message="@_errorMessage" />
+        }
+        <EditForm Model="_deck" OnValidSubmit="SubmitForm">
+            <FluentValidationValidator />
+            <label for="deckName">Deck Name:</label>
+            <InputText @bind-Value="_deck.Name" id="deckName" />
+            <ValidationMessage For="@(() => _deck.Name)" />
+
+            <button type="submit">Create</button>
+        </EditForm>
+    }
+</div>
+
+@code {
+    private DeckDto _deck = new DeckDto();
+    private bool _show = false;
+    private bool _submitSuccessful;
+    private string? _errorMessage;
+
+    private void ShowCreateDeck()
+    {
+        _show = !_show;
+    }
+    private async Task SubmitForm()
+    {
+        var response = await Mediator.Send(new AddDeckRequest(_deck));
+        if(response.DeckId == -1)
+        {
+            _errorMessage = "There was un problemo with saving the deck";
+            _submitSuccessful = false;
+            return;
+        }
+        _deck = new DeckDto();
+        _errorMessage = null;
+        _submitSuccessful = true;
+    }
+}

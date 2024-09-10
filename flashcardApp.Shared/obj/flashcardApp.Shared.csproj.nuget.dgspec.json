@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj": {}
+    "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj": {}
   },
   "projects": {
-    "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj": {
+    "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj",
+        "projectUniqueName": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj",
         "projectName": "flashcardApp.Shared",
-        "projectPath": "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj",
+        "projectPath": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj",
         "packagesPath": "/Users/rasmusjakobsen/.nuget/packages/",
-        "outputPath": "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Shared/obj/",
+        "outputPath": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rasmusjakobsen/.nuget/NuGet/NuGet.Config"
@@ -42,6 +42,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

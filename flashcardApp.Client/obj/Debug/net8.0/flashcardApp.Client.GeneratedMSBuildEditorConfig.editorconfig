@@ -13,43 +13,67 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = flashcardApp.Client
 build_property.RootNamespace = flashcardApp.Client
-build_property.ProjectDir = /Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/
+build_property.ProjectDir = /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client
+build_property.MSBuildProjectDirectory = /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/App.razor]
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/Features/Home/Home.razor]
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/Home/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvSG9tZS9Ib21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/Features/Tips/Accordion.razor]
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/ManageDeck/DeckPage.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvTWFuYWdlRGVjay9EZWNrUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/ManageDecks/AddDeck.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvTWFuYWdlRGVja3MvQWRkRGVjay5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/ManageDecks/DecksPage.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvTWFuYWdlRGVja3MvRGVja3NQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/ManageDecks/_imports.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvTWFuYWdlRGVja3MvX2ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/Shared/ErrorAlert.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvU2hhcmVkL0Vycm9yQWxlcnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/Shared/SuccessAlert.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvU2hhcmVkL1N1Y2Nlc3NBbGVydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/Tips/Accordion.razor]
 build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvVGlwcy9BY2NvcmRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/Features/Tips/HowFlashcards.razor]
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/Tips/HowFlashcards.razor]
 build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvVGlwcy9Ib3dGbGFzaGNhcmRzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/Features/Tips/WhyFlashcards.razor]
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/Tips/WhyFlashcards.razor]
 build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvVGlwcy9XaHlGbGFzaGNhcmRzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/_Imports.razor]
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/Features/Layout/MainLayout.razor]
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvTGF5b3V0L01haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-1q1x1bay2d
 
-[/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/Features/Layout/NavMenu.razor]
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvTGF5b3V0L05hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-vmvyaij0im

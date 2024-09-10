@@ -1,6 +1,8 @@
 using Pomelo.EntityFrameworkCore.MySql;
 using Microsoft.EntityFrameworkCore;
-using flashcardApp.Persistence;
+using flashcardApp.Api.Persistence;
+using FluentValidation.AspNetCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -8,7 +10,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseMySql(connectionString, new MySqlServerVersion(new Version(11, 3, 2))));
     
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddFluentValidation(fv =>
+fv.RegisterValidatorsFromAssembly(Assembly.Load("flashcardApp.Shared")));
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

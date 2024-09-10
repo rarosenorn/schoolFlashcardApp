@@ -1,0 +1,198 @@
+@page "/DeckPage/{DeckId:int}"
+@inject IMediator Mediator
+@if (_deck is not null)
+{
+    <div class="deckview-container">
+    <p>Deck Name: <span class="deckname">@_deck.Name</span></p>
+    <p># of cards in <span class="deckname">@_deck.Name</span>: <span class="numberofcards">@_deck.NumberOfCards</span>
+    </p>
+
+    <hr width="100%">
+    @* Front and back of current flashcard is shown. Depending on bool _editOn studymode or editmode is shown. *@
+    <p>Front:</p>
+    <div class="flashcard">
+        @if (!_editOn)
+            {
+                <p>@(_currentFlashcard != null ? _currentFlashcard.Frontside : "n/a")</p>
+            }
+            else
+            {
+                <input @bind="_currentFlashcard.Frontside" type="text" />
+            }
+        </div>
+
+        <p>Back:</p>
+        <div class="flashcardback flashcard">
+            @if (_currentFlashcard != null)
+            {
+                @if (!_editOn)
+                {
+                    <p style="@_currentCss"> @_currentFlashcard.Backside </p>
+                }
+                else
+                {
+                    <textarea @bind="_currentFlashcard.Backside" />
+                }
+            }
+            else
+            {
+                <p>n/a</p>
+            }
+        </div>
+        <div class="buttonrow">
+            <button class="turnnextbutton" @onclick="TurnOrNext">turn/next</button>
+            @if (!_editOn)
+            {
+                <button class="editbutton" @onclick="EditFlashcard">Edit</button>
+            }
+            else
+            {
+                <button class="editbutton" @onclick="SaveEdit">Save Changes</button>
+            }
+            <button @onclick="DeleteCardFromDeck">Delete</button>
+        </div>
+
+        <hr width="100%">
+        <button @onclick="ShowAddFlashcard">
+            @if (_show)
+            {
+                <span>Collapse</span>
+            }
+            else
+            {
+                <span>Add flashcards</span>
+            }
+        </button>
+
+        @if (_show)
+        {
+            <div class="addflashcard-container">
+                <label for="frontside">frontside</label>
+                <input @bind="_flashcard.Frontside" type="text" />
+
+                <label for="backside">backside</label>
+                <textarea @bind="_flashcard.Backside" rows="10" placeholder="flashcard backside" />
+                <button @onclick="AddCardToDeck" style="align-self: flex-start;">Add To Deck</button>
+            </div>
+        }
+    </div>
+}
+@code {
+    [Parameter] public int DeckId { get; set; }
+    private Deck _deck { get; set; }
+    private Flashcard _flashcard = new();
+    private bool _show;
+
+    private void AddCardToDeck()
+    {
+        _deck.Flashcards.Add(_flashcard);
+        _deck.NumberOfCards++;
+        _flashcard = new();
+    }
+    private void DeleteCardFromDeck()
+    {
+        if (_currentFlashcard != null)
+        {
+            _deck.Flashcards.Remove(_currentFlashcard);
+            _deck.NumberOfCards--;
+            if (_deck.Flashcards.Any())
+            {
+                _currentFlashcard = _deck.Flashcards[_cardCounter % _deck.Flashcards.Count()];
+            }
+            else
+            {
+                _currentFlashcard = null;
+                Console.WriteLine("potato");
+            }
+        }
+        else
+        {
+            Console.WriteLine("_currentFlashcard is null");
+        }
+    }
+    private void SaveEdit()
+    {
+        _editOn = false;
+    }
+    private void ShowAddFlashcard()
+    {
+        _show = !_show;
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var response = await Mediator.Send(new GetDeckRequest(DeckId));
+            _deck = new Deck
+                {
+                    Id = response.Deck.Id,
+                    Name = response.Deck.Name,
+                    Topic = response.Deck.Topic,
+                    NumberOfCards = response.Deck.NumberOfCards,
+                    Stars = response.Deck.Stars,
+                    Flashcards = response.Deck.Flashcards.Select(x => new Flashcard
+                    {
+                        Id = x.Id,
+                        Frontside = x.Frontside,
+                        Backside = x.Backside,
+                        SubTopic = x.SubTopic,
+                        DeckId = x.DeckId
+                    }).ToList()
+                };
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"There was a problem loading Deck Data: {ex.Message}");
+
+        }
+        if (_deck.Flashcards.Any())
+        {
+            _currentFlashcard = _deck.Flashcards[0];
+        }
+        else
+        {
+            Console.WriteLine("No flashy cards, add some!");
+        }
+        _currentCss = _hideCss;
+    }
+    private bool _editOn;
+    private void EditFlashcard()
+    {
+        _editOn = true;
+    }
+
+    @* Study logic *@
+    private Flashcard _currentFlashcard;
+    private int _cardCounter = 0;
+    private string _hideCss = "visibility: hidden;";
+    private string _showCss = "visibility: visible";
+    private string _currentCss;
+    private void TurnOrNext()
+    {
+        if (_deck.Flashcards.Any())
+        {
+            if (!_editOn)
+            {
+                if (_currentCss == _hideCss)
+                {
+                    _currentCss = _showCss;
+                }
+                else
+                {
+                    _currentCss = _hideCss;
+                    _cardCounter++;
+                    _currentFlashcard = _deck.Flashcards[_cardCounter % _deck.Flashcards.Count()];
+                }
+            }
+            else
+            {
+                _cardCounter++;
+                _currentFlashcard = _deck.Flashcards[_cardCounter % _deck.Flashcards.Count()];
+            }
+        }
+        else
+        {
+            Console.WriteLine("No flashy cards! add some!");
+        }
+    }
+}

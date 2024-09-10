@@ -1,0 +1,69 @@
+@page "/DecksPage"
+@inject IMediator Mediator
+
+<div class="mydecks-container">
+    <h1>My Decks</h1>
+    <div class="decktable-container">
+        <table>
+            <thead>
+                <th style="text-align: left;">Deck</th>
+                <th class="thwidth">Cards</th>
+                <th class="thwidth">Due</th>
+                <th class="thwidth">Stars</th>
+                <th class="thwidth">Settings</th>
+            </thead>
+            <tbody>
+                @if (_decks != null)
+                {
+                    @foreach (var deck in _decks)
+                    {
+                        <tr>
+                            <td>
+                                <NavLink href=@($"/DeckPage/{@deck.Id}")>@deck.Name</NavLink>
+                            </td>
+                            <td>@deck.NumberOfCards</td>
+                            <td>@deck.Stars</td>
+                            @* <td class="settingstd">
+                                <button @onclick="(() => ToggleSettingsAsync(deck.Id))"
+                                    @onblur="(() => ToggleSettingsAsync())">Settings</button>
+                                @if (_showSettingsForDeckId == deck.Id)
+                                {
+                                    <div class="dropdown">
+                                        <button @onclick="(() => RenameDeckAsync(deck.Id))">Rename</button>
+                                        <button @onclick="(() => DeleteDeckAsync(deck.Id))">Delete</button>
+                                    </div>
+                                }
+                            </td> *@
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<AddDeck />
+
+@code {
+    private IEnumerable<Deck> _decks { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var response = await Mediator.Send(new GetDecksRequest());
+            _decks = response.Decks.Select(x => new Deck
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Topic = x.Topic,
+                    NumberOfCards = x.NumberOfCards,
+                    Stars = x.Stars
+                });
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"There was a problem loading Deck Data: {ex.Message}");
+        }
+    }
+}

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/flashcardApp.Client.csproj": {}
+    "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/flashcardApp.Client.csproj": {}
   },
   "projects": {
-    "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/flashcardApp.Client.csproj": {
+    "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/flashcardApp.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/flashcardApp.Client.csproj",
+        "projectUniqueName": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/flashcardApp.Client.csproj",
         "projectName": "flashcardApp.Client",
-        "projectPath": "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/flashcardApp.Client.csproj",
+        "projectPath": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/flashcardApp.Client.csproj",
         "packagesPath": "/Users/rasmusjakobsen/.nuget/packages/",
-        "outputPath": "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Client/obj/",
+        "outputPath": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rasmusjakobsen/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj": {
-                "projectPath": "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj"
+              "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj": {
+                "projectPath": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj"
               }
             }
           }
@@ -47,6 +47,18 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Blazored.FluentValidation": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -100,14 +112,14 @@
         }
       }
     },
-    "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj": {
+    "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj",
+        "projectUniqueName": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj",
         "projectName": "flashcardApp.Shared",
-        "projectPath": "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj",
+        "projectPath": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj",
         "packagesPath": "/Users/rasmusjakobsen/.nuget/packages/",
-        "outputPath": "/Users/rasmusjakobsen/schoolProjects/flashcardApp/flashcardApp.Shared/obj/",
+        "outputPath": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rasmusjakobsen/.nuget/NuGet/NuGet.Config"
@@ -138,6 +150,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

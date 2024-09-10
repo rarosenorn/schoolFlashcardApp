@@ -12,7 +12,8 @@ body[b-1q1x1bay2d] {
 main[b-1q1x1bay2d] {
     flex-grow: 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 /* /Features/Layout/NavMenu.razor.rz.scp.css */
 aside[b-vmvyaij0im] {
