@@ -11,7 +11,7 @@ public class GetDeckHandler : IRequestHandler<GetDeckRequest, GetDeckRequest.Res
         _httpClient = httpClient;
     }
 
-    public async Task<GetDeckRequest.Response?> Handle(GetDeckRequest request, CancellationToken cancellationToken)
+    public async Task<GetDeckRequest.Response> Handle(GetDeckRequest request, CancellationToken cancellationToken)
     {
         try
         {

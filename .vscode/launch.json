@@ -5,13 +5,13 @@
     "version": "0.2.0",
     "compounds": [
         {
-            "name": "Launch Blazor Client and API",
-            "configurations": ["Launch API", "Launch Blazor WebAssembly"]
+            "name": "api + client",
+            "configurations": ["api", "client"]
         }
     ],
     "configurations": [
         {
-            "name": "Launch API",
+            "name": "api",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-api",
@@ -31,16 +31,10 @@
             }
         },
         {
-            "name": "Launch Blazor WebAssembly",
-            "type": "pwa-chrome",
+            "name": "client",
+            "type": "blazorwasm",
             "request": "launch",
-            "preLaunchTask": "build-client",
-            "url": "http://localhost:5160",
-            "webRoot": "${workspaceFolder}/flashcardApp.Client",
-            "sourceMaps": true,
-            "sourceMapPathOverrides": {
-                "webpack:///./*": "${webRoot}/*"
-            }
+            "cwd": "${workspaceFolder}/flashcardApp.Client"
         }
     ]
 }

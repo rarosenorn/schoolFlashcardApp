@@ -4,9 +4,9 @@ namespace flashcardApp.Shared.Features;
 public class DeckDto 
 {
     public int Id {get; set;}
-    public string? Name {get; set;} = "";
-    public string? Topic {get; set;} = "";
-    public int NumberOfCards {get; set;} = 0;
+    public string Name {get; set;}
+    public string Topic {get; set;}
+    public int NumberOfCards {get; set;}
     public decimal? Stars {get; set;}
 
     public List<FlashcardDto> Flashcards {get; set;} = new List<FlashcardDto>();

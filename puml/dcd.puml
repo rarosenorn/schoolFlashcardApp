@@ -1,0 +1,227 @@
+@startuml dcd
+package Api
+{
+    package ManageDeck
+    {
+        class EditDeckEndpoint implements "BaseAsyncEndpointWithRequest<TRequest>WithResponse<TResponse>"
+        {
+            - readonly DatabaseContext _dbContext
+            + EditDeckEndpoint(DatabaseContext dbContext)
+            + HandleAsync(EditDeckRequest request) : ActionResult<bool>
+        }
+        class GetDeckEndpoint implements "BaseAsyncEndpointWithRequest<TRequest>WithResponse<TResponse>"
+        {
+            - readonly DatabaseContext _dbContext
+            + GetDeckEndpoint(DatabaseContext dbContext)
+            + HandleAsync(GetDeckRequest request) : ActionResult<GetDeckRequest.Response>
+        }
+    }
+    package ManageDecks
+    {
+        class AddDeckEndpoint implements "BaseAsyncEndpointWithRequest<TRequest>WithResponse<TResponse>"
+        {
+            - readonly DatabaseContext _dbContext
+            + EditDeckEndpoint(DatabaseContext dbContext)
+            + HandleAsync(AddDeckRequest request) : ActionResult<AddDeckRequest.Response>
+        }
+        class DeleteDeckEndpoint implements "BaseAsyncEndpointWithRequest<TRequest>WithResponse<TResponse>"
+        {
+            - readonly DatabaseContext _dbContext
+            + EditDeckEndpoint(DatabaseContext dbContext)
+            + HandleAsync(DeleteDeckRequest request) : ActionResult<DeleteDeckRequest.Response>
+        }
+        class GetDecksEndpoint implements "BaseAsyncEndpointWithRequest<TRequest>WithResponse<TResponse>"
+        {
+            - readonly DatabaseContext _dbContext
+            + EditDeckEndpoint(DatabaseContext dbContext)
+            + HandleAsync(GetDecksRequest request) : ActionResult<GetDecksRequest.ResponseGet>
+        }
+    }
+    package Persistence
+    {
+        class Deck
+        {
+            + int Id
+            + string Name
+            + string Topic
+            + int NumberOfCards
+            + decimal Stars
+            + List<FlashcardDto> Flashcards
+        }
+        class Flashcard
+        {
+            + int Id
+            + string Frontside
+            + string Backside
+            + string SubTopic
+            + int DeckId
+        }
+    }
+}
+package Client
+{
+    package ManageDeck
+    {
+        class DeckPage <<component>>
+        {
+            @page "/DeckPage/{DeckId:int}"
+            @inject IMediator Mediator
+
+            + int DeckId [Parameter]
+            - Deck _deck
+            _ Flashcard _flashcard
+            - bool _show
+            - string _saveMessage = "derp"
+            - bool _editOn
+            - Flashcard _currentFlashcard
+            - int _cardCounter = 0
+            - string _hideCss = "visibility: hidden;"
+            - string _showCss = "visibility: visible"
+            - string _currentCss
+            - Save() : void
+            - AddCardToDeck() : void
+            - DeleteCardFromDeck() : void
+            - ToggleEditMode() : void
+            - ShowAddFlashcard() : void
+            # OnInitializedAsync() : void
+            - TurnOrNext() : void
+        }
+        class EditDeckHandler implements "IRequestHandler<TRequest TResponse>"
+        {
+            - readonly HttpClient _httpClient
+            + EditDeckHandler(Httpclient httpClient)
+            + Handle(EditDeckRequest request) : EditDeckRequest.Response
+        }
+        class GetDeckHandler implements "IRequestHandler<TRequest TResponse>"
+        {
+            - readonly HttpClient _httpClient
+            + GetDeckHandler(Httpclient httpClient)
+            + Handle(GetDeckRequest request) : GetDeckRequest.Response
+        }
+    }
+    package ManageDecks
+    {
+        class AddDeck <<component>>
+        {
+            @inject IMediator Mediator
+
+            - DeckDto _deck
+            - bool _show
+            - bool _submitSuccessful
+            - string _errorMessage
+            - ShowCreateDeck() : void
+            - SubmitForm() : void
+        }
+        class AddDeckHandler implements "IRequestHandler<TRequest TResponse>"
+        {
+            - readonly HttpClient _httpClient
+            + AddDeckHandler(HttpClient httpClient)
+            + Handle(AddDeckRequest request) : AddDeckRequest.Response
+        }
+        class DecksPage <<component>>
+        {
+            @page "/DecksPage"
+            @inject IMediator Mediator
+
+            - IEnumerable<Deck> _decks
+            # OnInitializedAsync()
+            - DeleteDeckAsync(int deckId)
+        }
+        class DeleteDeckHandler implements "IRequestHandler<TRequest TResponse>"
+        {
+            - readonly HttpClient _httpClient
+            + DeleteDeckHandler(HttpClient httpClient)
+            + Handle(DeleteDeckRequest request) : DeleteDeckRequest.Response
+        }
+        class GetDecksHandler implements "IRequestHandler<TRequest TResponse>"
+        {
+            - readonly HttpClient _httpClient
+            + DeleteDeckHandler(HttpClient httpClient)
+            + Handle(GetDecksRequest request) : GetDecksRequest.Response
+        }
+    }
+    package Shared
+    {
+        class Deck
+        {
+            + int Id
+            + string Name
+            + string Topic
+            + int NumberOfCards
+            + decimal Stars
+            + List<FlashcardDto> Flashcards
+        }
+        class Flashcard
+        {
+            + int Id
+            + string Frontside
+            + string Backside
+            + string SubTopic
+            + int DeckId
+        }
+    }
+}
+package Shared
+{
+    package ManageDeck
+    {
+        class EditDeckRequest <<record>> implements "IRequest<TResponse>"
+        {
+            + DeckDto Deck
+            + const string RouteTemplate = "/api/editdeck"
+            + record Response(bool isSuccess)
+        }
+        class GetDeckRequest <<record>> implements "IRequest<TResponse>"
+        {
+            + int DeckId
+            + const string RouteTemplate = "/api/getdeck/{deckId}"
+            + record Response(Deck deck)
+            + record Deck(int Id, string Name, string Topic, int NumberOfCards, decimal Stars, IEnumerable<Flashcard> Flashcards)
+            + record Flashcard(int Id, string Frontside, string Backside, string subTopic, int DeckId)
+            --
+        }
+    }
+    package ManageDecks
+    {
+        class AddDeckRequest implements "IRequest<TResponse>"
+        {
+            + DeckDto Deck
+            + const string RouteTemplate = "/api/decks"
+            + record Response(int DeckId)
+        }
+        class DeleteDeckRequest implements "IRequest<TResponse>"
+        {
+            + int DeckId
+            + const string RouteTemplate = "/api/deletedeck"
+            + record Response(bool IsSuccess)
+        }
+        class GetDecksRequest implements "IRequest<TResponse>"
+        {
+            + const string RouteTemplate = "/api/getdecks"
+            + record Deck(int Id, string Name, string Topic, int NumberOfCards, decimal? Stars)
+            + record Response(IEnumerable<Deck> Decks)
+        }
+    }
+    package Shared
+    {
+        class DeckDto
+        {
+            + int Id
+            + string Name
+            + string Topic
+            + int NumberOfCards
+            + decimal Stars
+            + List<FlashcardDto> Flashcards
+        }
+        class FlashcardDto
+        {
+            + int Id
+            + string Frontside
+            + string Backside
+            + string SubTopic
+            + int DeckId
+        }
+    }
+}
+
+@enduml

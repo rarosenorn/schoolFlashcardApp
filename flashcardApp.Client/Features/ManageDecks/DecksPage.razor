@@ -23,6 +23,7 @@
                             </td>
                             <td>@deck.NumberOfCards</td>
                             <td>@deck.Stars</td>
+                            <td><button @onclick="(() => DeleteDeckAsync(deck.Id))">Delete</button></td>
                             @* <td class="settingstd">
                                 <button @onclick="(() => ToggleSettingsAsync(deck.Id))"
                                     @onblur="(() => ToggleSettingsAsync())">Settings</button>
@@ -64,6 +65,20 @@
         catch (HttpRequestException ex)
         {
             Console.WriteLine($"There was a problem loading Deck Data: {ex.Message}");
+        }
+    }
+    private async Task DeleteDeckAsync(int deckId)
+    {
+        var request = new DeleteDeckRequest(deckId);
+        var response = await Mediator.Send(request);
+        if(response.IsSuccess)
+        {
+            Console.WriteLine("success");
+            StateHasChanged();
+        }
+        else
+        {
+            Console.WriteLine("No bueno!?");
         }
     }
 }

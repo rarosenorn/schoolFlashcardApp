@@ -43,11 +43,11 @@
             <button class="turnnextbutton" @onclick="TurnOrNext">turn/next</button>
             @if (!_editOn)
             {
-                <button class="editbutton" @onclick="EditFlashcard">Edit</button>
+                <button class="editbutton" @onclick="ToggleEditMode">Edit</button>
             }
             else
             {
-                <button class="editbutton" @onclick="SaveEdit">Save Changes</button>
+                <button class="editbutton" @onclick="ToggleEditMode">Save Changes</button>
             }
             <button @onclick="DeleteCardFromDeck">Delete</button>
         </div>
@@ -76,13 +76,48 @@
             </div>
         }
     </div>
+    <button @onclick="Save">Save dat shit</button>
+    <p>@_saveMessage</p>
+
 }
 @code {
     [Parameter] public int DeckId { get; set; }
     private Deck _deck { get; set; }
     private Flashcard _flashcard = new();
     private bool _show;
+    private string _saveMessage = "derp";
+    private bool _editOn;
 
+    @* Study logic *@
+    private Flashcard _currentFlashcard;
+    private int _cardCounter = 0;
+    private string _hideCss = "visibility: hidden";
+    private string _showCss = "visibility: visible";
+    private string _currentCss;
+
+    private async Task Save()
+    {
+        var deck = new DeckDto()
+            {
+                Id = _deck.Id,
+                Name = _deck.Name,
+                Stars = _deck.Stars,
+                NumberOfCards = _deck.NumberOfCards,
+                Topic = _deck.Topic,
+                Flashcards = _deck.Flashcards.Select(f => new FlashcardDto
+                {
+                    Frontside = f.Frontside,
+                    Backside = f.Backside,
+                    SubTopic = f.SubTopic,
+                    DeckId = _deck.Id
+                }).ToList()
+            };
+        var response = await Mediator.Send(new EditDeckRequest(deck));
+        if (response.IsSuccess)
+        {
+            _saveMessage = "it worked!";
+        }
+    }
     private void AddCardToDeck()
     {
         _deck.Flashcards.Add(_flashcard);
@@ -110,9 +145,9 @@
             Console.WriteLine("_currentFlashcard is null");
         }
     }
-    private void SaveEdit()
+    private void ToggleEditMode()
     {
-        _editOn = false;
+        _editOn = !_editOn;
     }
     private void ShowAddFlashcard()
     {
@@ -143,7 +178,6 @@
         catch (HttpRequestException ex)
         {
             Console.WriteLine($"There was a problem loading Deck Data: {ex.Message}");
-
         }
         if (_deck.Flashcards.Any())
         {
@@ -155,18 +189,6 @@
         }
         _currentCss = _hideCss;
     }
-    private bool _editOn;
-    private void EditFlashcard()
-    {
-        _editOn = true;
-    }
-
-    @* Study logic *@
-    private Flashcard _currentFlashcard;
-    private int _cardCounter = 0;
-    private string _hideCss = "visibility: hidden;";
-    private string _showCss = "visibility: visible";
-    private string _currentCss;
     private void TurnOrNext()
     {
         if (_deck.Flashcards.Any())

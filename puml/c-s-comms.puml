@@ -1,0 +1,88 @@
+@startuml comms
+
+package Server
+{
+    class GetDeckEndpoint
+    {
+        DatabaseContext _dbContext
+        HandleAsync(int deckId) : GetDeckRequest.Response
+    }
+    class Flashcard
+    {
+        int Id
+        string Frontside
+        string Backside
+        string SubTopic
+        int DeckId
+    }
+    class Deck
+    {
+        int Id
+        string Name
+        string Topic
+        int NumberOfCards
+        decimal Stars
+        List<FlashcardDto> Flashcards
+    }
+}
+package Client
+{
+    class DeckPage
+    {
+        ...
+        Save() : void
+    }
+    class GetDeckHandler
+    {
+        HttpClient _httpClient
+        Handle(GetDeckRequest request) : GetDeckRequest.Response
+    }
+    class Flashcard
+    {
+        int Id
+        string Frontside
+        string Backside
+        string SubTopic
+        int DeckId
+    }
+    class Deck
+    {
+        int Id
+        string Name
+        string Topic
+        int NumberOfCards
+        decimal Stars
+        List<FlashcardDto> Flashcards
+    }
+}
+package Shared
+{
+    class GetDeckRequest  <<IRequest<GetDeckRequest.Response>>>
+    {
+        int DeckId
+        string RouteTemplate
+        record Response(Deck deck)
+        record Deck(int Id, string Name, string Topic, int NumberOfCards, decimal Stars, IEnumerable<Flashcard> Flashcards)
+        record Flashcard(int Id, string Frontside, string Backside, string subTopic, int DeckId)
+        --
+    }
+    class DeckDto
+    {
+        int Id
+        string Name
+        string Topic
+        int NumberOfCards
+        decimal Stars
+        List<FlashcardDto> Flashcards
+    }
+    class FlashcardDto
+    {
+        int Id
+        string Frontside
+        string Backside
+        string SubTopic
+        int DeckId
+    }
+}
+
+@enduml

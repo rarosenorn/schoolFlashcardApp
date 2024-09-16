@@ -16,7 +16,7 @@ public class GetDeckEndpoint : BaseAsyncEndpoint.WithRequest<int>.WithResponse<G
         _dbContext = dbContext;
     }
 
-      [HttpGet(GetDeckRequest.RouteTemplate)]
+    [HttpGet(GetDeckRequest.RouteTemplate)]
     public override async Task<ActionResult<GetDeckRequest.Response>> HandleAsync(int deckId, CancellationToken cancellationToken = default)
     {
         var deck = await _dbContext.Decks.Include(x => x.Flashcards)

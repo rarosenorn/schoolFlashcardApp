@@ -36,11 +36,11 @@
     private DeckDto _deck = new DeckDto();
     private bool _show = false;
     private bool _submitSuccessful;
-    private string? _errorMessage;
+    private string _errorMessage;
 
     private void ShowCreateDeck()
     {
-        _show = !_show;
+            _show = !_show;
     }
     private async Task SubmitForm()
     {
