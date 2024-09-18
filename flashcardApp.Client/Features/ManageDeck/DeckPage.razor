@@ -70,7 +70,7 @@
                 <FluentValidationValidator />
                 <label for="frontside">frontside</label>
                 <InputText @bind-Value="_flashcard.Frontside" id="frontside" />
-                <ValidationMessage Fobor="@(() => _flashcard.Frontside)" />
+                <ValidationMessage For="@(() => _flashcard.Frontside)" />
 
                 <label for="backside">backside</label>
                 <InputTextArea @bind-Value="_flashcard.Backside" id="backside" />
