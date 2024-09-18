@@ -66,14 +66,26 @@
 
         @if (_show)
         {
-            <div class="addflashcard-container">
+            <EditForm Model="_flashcard" OnValidSubmit="AddCardToDeck">
+                <FluentValidationValidator />
                 <label for="frontside">frontside</label>
-                <input @bind="_flashcard.Frontside" type="text" />
+                <InputText @bind-Value="_flashcard.Frontside" id="frontside" />
+                <ValidationMessage Fobor="@(() => _flashcard.Frontside)" />
 
                 <label for="backside">backside</label>
-                <textarea @bind="_flashcard.Backside" rows="10" placeholder="flashcard backside" />
-                <button @onclick="AddCardToDeck" style="align-self: flex-start;">Add To Deck</button>
-            </div>
+                <InputTextArea @bind-Value="_flashcard.Backside" id="backside" />
+                <ValidationMessage For="(() => _flashcard.Backside)" />
+
+                <button type="submit">Add To Deck</button>
+            </EditForm>
+            @* <div class="addflashcard-container">
+    <label for="frontside">frontside</label>
+    <input @bind="_flashcard.Frontside" type="text" />
+
+    <label for="backside">backside</label>
+    <textarea @bind="_flashcard.Backside" rows="10" placeholder="flashcard backside" />
+    <button @onclick="AddCardToDeck" style="align-self: flex-start;">Add To Deck</button>
+    </div> *@
         }
     </div>
     <button @onclick="Save">Save dat shit</button>
@@ -82,14 +94,14 @@
 }
 @code {
     [Parameter] public int DeckId { get; set; }
-    private Deck _deck { get; set; }
-    private Flashcard _flashcard = new();
+    private DeckDto _deck { get; set; }
+    private FlashcardDto _flashcard = new();
     private bool _show;
     private string _saveMessage = "derp";
     private bool _editOn;
 
     @* Study logic *@
-    private Flashcard _currentFlashcard;
+    private FlashcardDto _currentFlashcard;
     private int _cardCounter = 0;
     private string _hideCss = "visibility: hidden";
     private string _showCss = "visibility: visible";
@@ -97,22 +109,7 @@
 
     private async Task Save()
     {
-        var deck = new DeckDto()
-            {
-                Id = _deck.Id,
-                Name = _deck.Name,
-                Stars = _deck.Stars,
-                NumberOfCards = _deck.NumberOfCards,
-                Topic = _deck.Topic,
-                Flashcards = _deck.Flashcards.Select(f => new FlashcardDto
-                {
-                    Frontside = f.Frontside,
-                    Backside = f.Backside,
-                    SubTopic = f.SubTopic,
-                    DeckId = _deck.Id
-                }).ToList()
-            };
-        var response = await Mediator.Send(new EditDeckRequest(deck));
+        var response = await Mediator.Send(new EditDeckRequest(_deck));
         if (response.IsSuccess)
         {
             _saveMessage = "it worked!";
@@ -158,14 +155,14 @@
         try
         {
             var response = await Mediator.Send(new GetDeckRequest(DeckId));
-            _deck = new Deck
+            _deck = new DeckDto
                 {
                     Id = response.Deck.Id,
                     Name = response.Deck.Name,
                     Topic = response.Deck.Topic,
                     NumberOfCards = response.Deck.NumberOfCards,
                     Stars = response.Deck.Stars,
-                    Flashcards = response.Deck.Flashcards.Select(x => new Flashcard
+                    Flashcards = response.Deck.Flashcards.Select(x => new FlashcardDto
                     {
                         Id = x.Id,
                         Frontside = x.Frontside,

@@ -15,5 +15,6 @@ public class FlashcardValidator : AbstractValidator<FlashcardDto>
     public FlashcardValidator()
     {
         RuleFor(x => x.Frontside).NotEmpty().WithMessage("Cant be empty!<:)");
+        RuleFor(x => x.Backside).NotEmpty().WithMessage("need to put something!");
     }
 }

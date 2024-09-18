@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "flashcardApp.Client",
   "resources": {
-    "hash": "sha256-sCr7BmyB8/RUlav64N3vM1QlgGOcUFDCmTJoA+Zg4sM=",
+    "hash": "sha256-zy9Mq2SBYsPwFre9r0SqdjkLdxN8afpV6jDnOSLNzNY=",
     "jsModuleNative": {
       "dotnet.native.8.0.8.dkv4nakjiw.js": "sha256-juC5sA7gHTLXFEhAKgdM2/RavswpwCtDfjYGsAz2FXg="
     },
@@ -212,12 +212,12 @@
       "mscorlib.wasm": "sha256-Gz8PyW2/fwihe5ul81OwmRUrU71r+KtbyRw6xlOGD+Q=",
       "netstandard.wasm": "sha256-jMTqIQzoDS810lyhZpMO5eEC36EzntXqSVn+2qwkOMQ=",
       "System.Private.CoreLib.wasm": "sha256-NFj5WE5VLP2LptZIRJCUIc1AMk06FmxpsSILfPISwAw=",
-      "flashcardApp.Shared.wasm": "sha256-BROHGOD5iA8iPNvN9VAXiGaK2CsP9Lfx5RQqyIzcAlo=",
-      "flashcardApp.Client.wasm": "sha256-2OtG/cumlYaw6d+NuRQpnr1A8HDe5/F9vrLPDEofMrg="
+      "flashcardApp.Shared.wasm": "sha256-62AO3p49snH2D7niickMUvgIH4LTxEr3a8ePxnY8osU=",
+      "flashcardApp.Client.wasm": "sha256-5haaEu2jVAzNEUvv3/SWNKZhUVMtwtLi/SnES2TiDkg="
     },
     "pdb": {
-      "flashcardApp.Shared.pdb": "sha256-y4maxC1pdk9QCLe/dUzT00Leei4aUgjrZyeajBf5EN0=",
-      "flashcardApp.Client.pdb": "sha256-Q729STNtxpvzsP09FzpfLkQF7eFjIpOSjllJ84ROJjc="
+      "flashcardApp.Shared.pdb": "sha256-GHEpBpW3xv7UUWP7wkVPACGMbRGYfzc7yf3A6r3jB5A=",
+      "flashcardApp.Client.pdb": "sha256-j0scJ8g2eElrT61a9xcjfUcGi3JgbPnyzw4tGgvQkes="
     }
   },
   "cacheBootResources": true,
