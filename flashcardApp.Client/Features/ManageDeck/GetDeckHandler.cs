@@ -2,7 +2,9 @@ using MediatR;
 using flashcardApp.Shared.Features;
 using System.Net.Http.Json;
 
-public class GetDeckHandler : IRequestHandler<GetDeckRequest, GetDeckRequest.Response?>
+namespace flashcardApp.Client.Features.ManageDecks;
+
+public class GetDeckHandler : IRequestHandler<GetDeckRequest, GetDeckRequest.Response>
 {
     private readonly HttpClient _httpClient;
 

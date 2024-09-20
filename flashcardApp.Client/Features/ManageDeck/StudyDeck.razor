@@ -1,0 +1,120 @@
+<p>Front:</p>
+<div class="flashcard">
+    @if (!_editOn)
+    {
+        <p>@(_currentFlashcard != null ? _currentFlashcard.Frontside : "n/a")</p>
+    }
+    else
+    {
+        <input @bind="_currentFlashcard.Frontside" type="text" />
+    }
+</div>
+
+<p>Back:</p>
+<div class="flashcardback flashcard">
+    @if (_currentFlashcard != null)
+    {
+        @if (!_editOn)
+        {
+            <p style="@_currentCss"> @_currentFlashcard.Backside </p>
+        }
+        else
+        {
+            <textarea @bind="_currentFlashcard.Backside" />
+        }
+    }
+    else
+    {
+        <p>n/a</p>
+    }
+</div>
+<div class="buttonrow">
+    <button class="turnnextbutton" @onclick="TurnOrNext">turn/next</button>
+    @if (!_editOn)
+    {
+        <button class="editbutton" @onclick="ToggleEditMode">Edit</button>
+    }
+    else
+    {
+        <button class="editbutton" @onclick="ToggleEditMode">Save Changes</button>
+    }
+    <button @onclick="DeleteCardFromDeck">Delete</button>
+</div>
+
+@code {
+    [Parameter, EditorRequired] public DeckDto Deck { get; set; }
+    private bool _editOn;
+
+    private FlashcardDto _currentFlashcard;
+    private int _cardCounter = 0;
+    private string _hideCss = "visibility: hidden";
+    private string _showCss = "visibility: visible";
+    private string _currentCss;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Deck.Flashcards.Any())
+        {
+            _currentFlashcard = Deck.Flashcards[0];
+        }
+        else
+        {
+            Console.WriteLine("No flashy cards, add some!");
+        }
+        _currentCss = _hideCss;
+    }
+    private void DeleteCardFromDeck()
+    {
+        if (_currentFlashcard != null)
+        {
+            Deck.Flashcards.Remove(_currentFlashcard);
+            Deck.NumberOfCards--;
+            if (Deck.Flashcards.Any())
+            {
+                _currentFlashcard = Deck.Flashcards[_cardCounter % Deck.Flashcards.Count()];
+            }
+            else
+            {
+                _currentFlashcard = null;
+                Console.WriteLine("potato");
+            }
+        }
+        else
+        {
+            Console.WriteLine("_currentFlashcard is null");
+        }
+    }
+    private void ToggleEditMode()
+    {
+        _editOn = !_editOn;
+    }
+
+    private void TurnOrNext()
+    {
+        if (Deck.Flashcards.Any())
+        {
+            if (!_editOn)
+            {
+                if (_currentCss == _hideCss)
+                {
+                    _currentCss = _showCss;
+                }
+                else
+                {
+                    _currentCss = _hideCss;
+                    _cardCounter++;
+                    _currentFlashcard = Deck.Flashcards[_cardCounter % Deck.Flashcards.Count()];
+                }
+            }
+            else
+            {
+                _cardCounter++;
+                _currentFlashcard = Deck.Flashcards[_cardCounter % Deck.Flashcards.Count()];
+            }
+        }
+        else
+        {
+            Console.WriteLine("No flashy cards! add some!");
+        }
+    }
+}

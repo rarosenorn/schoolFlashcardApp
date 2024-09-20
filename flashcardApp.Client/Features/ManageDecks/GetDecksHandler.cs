@@ -2,7 +2,7 @@ using MediatR;
 using flashcardApp.Shared.Features;
 using System.Net.Http.Json;
 
-public class GetDecksHandler : IRequestHandler<GetDecksRequest, GetDecksRequest.Response?>
+public class GetDecksHandler : IRequestHandler<GetDecksRequest, GetDecksRequest.Response>
 {
     private readonly HttpClient _httpClient;
 
@@ -11,7 +11,7 @@ public class GetDecksHandler : IRequestHandler<GetDecksRequest, GetDecksRequest.
         _httpClient = httpClient;
     }
 
-    public async Task<GetDecksRequest.Response?> Handle(GetDecksRequest request, CancellationToken cancellationToken)
+    public async Task<GetDecksRequest.Response> Handle(GetDecksRequest request, CancellationToken cancellationToken)
     {
         try
         {

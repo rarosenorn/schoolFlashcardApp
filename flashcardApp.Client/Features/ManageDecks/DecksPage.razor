@@ -24,31 +24,36 @@
                             <td>@deck.NumberOfCards</td>
                             <td>@deck.Stars</td>
                             <td><button @onclick="(() => DeleteDeckAsync(deck.Id))">Delete</button></td>
-                            @* <td class="settingstd">
-                                <button @onclick="(() => ToggleSettingsAsync(deck.Id))"
-                                    @onblur="(() => ToggleSettingsAsync())">Settings</button>
-                                @if (_showSettingsForDeckId == deck.Id)
-                                {
-                                    <div class="dropdown">
-                                        <button @onclick="(() => RenameDeckAsync(deck.Id))">Rename</button>
-                                        <button @onclick="(() => DeleteDeckAsync(deck.Id))">Delete</button>
-                                    </div>
-                                }
-                            </td> *@
                         </tr>
                     }
                 }
             </tbody>
         </table>
     </div>
-
 </div>
-<AddDeck />
+
+<AddDeck OnSubmitForm="AddLatestDeckAsync"/>
 
 @code {
-    private IEnumerable<Deck> _decks { get; set; }
-
+    private List<Deck> _decks { get; set; }
     protected override async Task OnInitializedAsync()
+    {
+        await GetDecksAsync();
+    }
+    public async Task AddLatestDeckAsync()
+    {
+        var response = await Mediator.Send(new GetLatestDeckRequest());
+        Deck deck = new() 
+        {
+            Id = response.Deck.Id,
+            Name = response.Deck.Name,
+            Topic = response.Deck.Topic,
+            NumberOfCards = response.Deck.NumberOfCards,
+            Stars = response.Deck.Stars
+        };
+        _decks.Add(deck);
+    }
+    private async Task GetDecksAsync()
     {
         try
         {
@@ -60,7 +65,7 @@
                     Topic = x.Topic,
                     NumberOfCards = x.NumberOfCards,
                     Stars = x.Stars
-                });
+                }).ToList();
         }
         catch (HttpRequestException ex)
         {
@@ -71,10 +76,11 @@
     {
         var request = new DeleteDeckRequest(deckId);
         var response = await Mediator.Send(request);
-        if(response.IsSuccess)
+        if (response.IsSuccess)
         {
             Console.WriteLine("success");
-            StateHasChanged();
+            Deck deck = _decks.Where(x => x.Id == deckId).SingleOrDefault();
+            _decks.Remove(deck);
         }
         else
         {

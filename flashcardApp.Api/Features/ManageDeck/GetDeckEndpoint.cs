@@ -41,7 +41,6 @@ public class GetDeckEndpoint : BaseAsyncEndpoint.WithRequest<int>.WithResponse<G
             ));
         }
 
-
         var returnDeck = new GetDeckRequest.Deck
             (
                 deck.Id,

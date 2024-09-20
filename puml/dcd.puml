@@ -69,22 +69,32 @@ package Client
 
             + int DeckId [Parameter]
             - Deck _deck
-            _ Flashcard _flashcard
-            - bool _show
             - string _saveMessage = "derp"
+            - UpdateUI() : void
+            # OnInitializedAsync() : void
+            - Save() : void
+        }
+        class StudyDeck
+        {
             - bool _editOn
             - Flashcard _currentFlashcard
             - int _cardCounter = 0
             - string _hideCss = "visibility: hidden;"
             - string _showCss = "visibility: visible"
             - string _currentCss
-            - Save() : void
-            - AddCardToDeck() : void
+            # OnInitializedAsync() : void
             - DeleteCardFromDeck() : void
             - ToggleEditMode() : void
-            - ShowAddFlashcard() : void
-            # OnInitializedAsync() : void
             - TurnOrNext() : void
+        }
+        class AddCard
+        {
+            + DeckDto Deck
+            _ Flashcard _flashcard
+            - bool _show
+            + Action OnCardAdded
+            - AddCardToDeck() : void
+            - ShowAddFlashcard() : void
         }
         class EditDeckHandler implements "IRequestHandler<TRequest TResponse>"
         {

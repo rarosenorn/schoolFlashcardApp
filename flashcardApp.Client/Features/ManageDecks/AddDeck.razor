@@ -38,6 +38,7 @@
     private bool _show = false;
     private bool _submitSuccessful;
     private string _errorMessage;
+    [Parameter, EditorRequired] public EventCallback OnSubmitForm {get; set;}
 
     private void ShowCreateDeck()
     {
@@ -55,5 +56,6 @@
         _deck = new DeckDto();
         _errorMessage = null;
         _submitSuccessful = true;
+        await OnSubmitForm.InvokeAsync();
     }
 }

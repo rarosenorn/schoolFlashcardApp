@@ -1,0 +1,43 @@
+<button @onclick="ShowAddFlashcard">
+    @if (_show)
+    {
+        <span>Collapse</span>
+    }
+    else
+    {
+        <span>Add flashcards</span>
+    }
+</button>
+@if (_show)
+{
+    <EditForm Model="_flashcard" OnValidSubmit="AddCardToDeck">
+    <FluentValidationValidator />
+    <label for="frontside">frontside</label>
+    <InputText @bind-Value="_flashcard.Frontside" id="frontside" />
+    <ValidationMessage For="@(() => _flashcard.Frontside)" />
+
+    <label for="backside">backside</label>
+    <InputTextArea @bind-Value="_flashcard.Backside" id="backside" />
+    <ValidationMessage For="(() => _flashcard.Backside)" />
+
+    <button type="submit">Add To Deck</button>
+</EditForm>
+}
+@code {
+    [Parameter, EditorRequired] public DeckDto Deck { get; set; }
+    private FlashcardDto _flashcard = new();
+    private bool _show;
+    [Parameter, EditorRequired] public Action OnCardAdded {get; set;}
+
+    private void AddCardToDeck()
+    {
+        Deck.Flashcards.Add(_flashcard);
+        Deck.NumberOfCards++;
+        _flashcard = new();
+        OnCardAdded?.Invoke();
+    }
+    private void ShowAddFlashcard()
+    {
+        _show = !_show;
+    }
+}

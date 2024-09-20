@@ -7,106 +7,21 @@
     <p># of cards in <span class="deckname">@_deck.Name</span>: <span class="numberofcards">@_deck.NumberOfCards</span>
     </p>
 
+    <StudyDeck Deck="@_deck"/>
     <hr width="100%">
-    @* Front and back of current flashcard is shown. Depending on bool _editOn studymode or editmode is shown. *@
-    <p>Front:</p>
-    <div class="flashcard">
-        @if (!_editOn)
-            {
-                <p>@(_currentFlashcard != null ? _currentFlashcard.Frontside : "n/a")</p>
-            }
-            else
-            {
-                <input @bind="_currentFlashcard.Frontside" type="text" />
-            }
-        </div>
-
-        <p>Back:</p>
-        <div class="flashcardback flashcard">
-            @if (_currentFlashcard != null)
-            {
-                @if (!_editOn)
-                {
-                    <p style="@_currentCss"> @_currentFlashcard.Backside </p>
-                }
-                else
-                {
-                    <textarea @bind="_currentFlashcard.Backside" />
-                }
-            }
-            else
-            {
-                <p>n/a</p>
-            }
-        </div>
-        <div class="buttonrow">
-            <button class="turnnextbutton" @onclick="TurnOrNext">turn/next</button>
-            @if (!_editOn)
-            {
-                <button class="editbutton" @onclick="ToggleEditMode">Edit</button>
-            }
-            else
-            {
-                <button class="editbutton" @onclick="ToggleEditMode">Save Changes</button>
-            }
-            <button @onclick="DeleteCardFromDeck">Delete</button>
-        </div>
-
-        <hr width="100%">
-        <button @onclick="ShowAddFlashcard">
-            @if (_show)
-            {
-                <span>Collapse</span>
-            }
-            else
-            {
-                <span>Add flashcards</span>
-            }
-        </button>
-
-        @if (_show)
-        {
-            <EditForm Model="_flashcard" OnValidSubmit="AddCardToDeck">
-                <FluentValidationValidator />
-                <label for="frontside">frontside</label>
-                <InputText @bind-Value="_flashcard.Frontside" id="frontside" />
-                <ValidationMessage For="@(() => _flashcard.Frontside)" />
-
-                <label for="backside">backside</label>
-                <InputTextArea @bind-Value="_flashcard.Backside" id="backside" />
-                <ValidationMessage For="(() => _flashcard.Backside)" />
-
-                <button type="submit">Add To Deck</button>
-            </EditForm>
-            @* <div class="addflashcard-container">
-    <label for="frontside">frontside</label>
-    <input @bind="_flashcard.Frontside" type="text" />
-
-    <label for="backside">backside</label>
-    <textarea @bind="_flashcard.Backside" rows="10" placeholder="flashcard backside" />
-    <button @onclick="AddCardToDeck" style="align-self: flex-start;">Add To Deck</button>
-    </div> *@
-        }
+    <AddCard Deck="@_deck" OnCardAdded="UpdateUi"/>
     </div>
     <button @onclick="Save">Save dat shit</button>
     <p>@_saveMessage</p>
-
 }
 @code {
     [Parameter] public int DeckId { get; set; }
     private DeckDto _deck { get; set; }
-    private FlashcardDto _flashcard = new();
-    private bool _show;
     private string _saveMessage = "derp";
-    private bool _editOn;
-
-    @* Study logic *@
-    private FlashcardDto _currentFlashcard;
-    private int _cardCounter = 0;
-    private string _hideCss = "visibility: hidden";
-    private string _showCss = "visibility: visible";
-    private string _currentCss;
-
+    public void UpdateUi()
+    {
+        StateHasChanged();
+    }
     private async Task Save()
     {
         var response = await Mediator.Send(new EditDeckRequest(_deck));
@@ -114,41 +29,6 @@
         {
             _saveMessage = "it worked!";
         }
-    }
-    private void AddCardToDeck()
-    {
-        _deck.Flashcards.Add(_flashcard);
-        _deck.NumberOfCards++;
-        _flashcard = new();
-    }
-    private void DeleteCardFromDeck()
-    {
-        if (_currentFlashcard != null)
-        {
-            _deck.Flashcards.Remove(_currentFlashcard);
-            _deck.NumberOfCards--;
-            if (_deck.Flashcards.Any())
-            {
-                _currentFlashcard = _deck.Flashcards[_cardCounter % _deck.Flashcards.Count()];
-            }
-            else
-            {
-                _currentFlashcard = null;
-                Console.WriteLine("potato");
-            }
-        }
-        else
-        {
-            Console.WriteLine("_currentFlashcard is null");
-        }
-    }
-    private void ToggleEditMode()
-    {
-        _editOn = !_editOn;
-    }
-    private void ShowAddFlashcard()
-    {
-        _show = !_show;
     }
     protected override async Task OnInitializedAsync()
     {
@@ -175,43 +55,6 @@
         catch (HttpRequestException ex)
         {
             Console.WriteLine($"There was a problem loading Deck Data: {ex.Message}");
-        }
-        if (_deck.Flashcards.Any())
-        {
-            _currentFlashcard = _deck.Flashcards[0];
-        }
-        else
-        {
-            Console.WriteLine("No flashy cards, add some!");
-        }
-        _currentCss = _hideCss;
-    }
-    private void TurnOrNext()
-    {
-        if (_deck.Flashcards.Any())
-        {
-            if (!_editOn)
-            {
-                if (_currentCss == _hideCss)
-                {
-                    _currentCss = _showCss;
-                }
-                else
-                {
-                    _currentCss = _hideCss;
-                    _cardCounter++;
-                    _currentFlashcard = _deck.Flashcards[_cardCounter % _deck.Flashcards.Count()];
-                }
-            }
-            else
-            {
-                _cardCounter++;
-                _currentFlashcard = _deck.Flashcards[_cardCounter % _deck.Flashcards.Count()];
-            }
-        }
-        else
-        {
-            Console.WriteLine("No flashy cards! add some!");
         }
     }
 }

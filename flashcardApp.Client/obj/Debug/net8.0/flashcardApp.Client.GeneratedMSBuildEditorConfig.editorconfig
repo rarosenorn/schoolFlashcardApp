@@ -30,8 +30,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvSG9tZS9Ib21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/ManageDeck/AddCard.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvTWFuYWdlRGVjay9BZGRDYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/ManageDeck/DeckPage.razor]
 build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvTWFuYWdlRGVjay9EZWNrUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/ManageDeck/StudyDeck.razor]
+build_metadata.AdditionalFiles.TargetPath = RmVhdHVyZXMvTWFuYWdlRGVjay9TdHVkeURlY2sucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/Features/ManageDecks/AddDeck.razor]
