@@ -25,7 +25,7 @@ public class EditDeckEndpoint : BaseAsyncEndpoint.WithRequest<EditDeckRequest>.W
         {
             return BadRequest("Deck not found.");
         }
-
+        
         deck.Name = request.Deck.Name;
         deck.NumberOfCards = request.Deck.NumberOfCards;
         deck.Stars = request.Deck.Stars;

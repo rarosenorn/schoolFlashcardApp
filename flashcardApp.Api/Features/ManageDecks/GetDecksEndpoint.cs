@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace flashcardApp.Api.Features.ManageDecks;
 
-public class GetDecksEndpoint : BaseAsyncEndpoint.WithRequest<int>.WithResponse<GetDecksRequest.Response>
+public class GetDecksEndpoint : BaseAsyncEndpoint.WithoutRequest.WithResponse<GetDecksRequest.Response>
 {
     private readonly DatabaseContext _dbContext;
 
@@ -17,7 +17,7 @@ public class GetDecksEndpoint : BaseAsyncEndpoint.WithRequest<int>.WithResponse<
     }
 
     [HttpGet(GetDecksRequest.RouteTemplate)]
-    public override async Task<ActionResult<GetDecksRequest.Response>> HandleAsync(int deckId, CancellationToken cancellationToken = default)
+    public override async Task<ActionResult<GetDecksRequest.Response>> HandleAsync(CancellationToken cancellationToken = default)
     {
         var decks = await _dbContext.Decks.Include(x => x.Flashcards)
                                           .ToListAsync(cancellationToken);
