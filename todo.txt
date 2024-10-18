@@ -1,0 +1,4 @@
+√ - delete cards dosent work (mb edit endpoint?) (
+- Make edit action method more effective, patch instead of put? Add flashcards instead of replacing them? 
+Only replace the properties that was changed?
+- Valider med dataannotations istedet for fluentvalidation

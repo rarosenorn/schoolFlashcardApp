@@ -1071,8 +1071,6 @@
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/icudt_CJK.dat
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/icudt_EFIGS.dat
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/icudt_no_CJK.dat
-/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/MediatR.Extensions.Microsoft.DependencyInjection.wasm
-/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/MediatR.wasm
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.AspNetCore.Authorization.wasm
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.wasm
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.AspNetCore.Components.wasm
@@ -1368,7 +1366,6 @@
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.JSInterop.WebAssembly.wasm.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/System.Net.Quic.wasm.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/System.ComponentModel.EventBasedAsync.wasm.gz
-/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/MediatR.Extensions.Microsoft.DependencyInjection.wasm.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/System.Security.AccessControl.wasm.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.Extensions.DependencyInjection.wasm.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/System.Collections.Immutable.wasm.gz
@@ -1458,7 +1455,6 @@
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/System.Runtime.Serialization.wasm.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/System.IO.Compression.Brotli.wasm.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/System.Net.Http.wasm.gz
-/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/MediatR.wasm.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/System.Private.DataContractSerialization.wasm.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/System.Reflection.Extensions.wasm.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.wasm.gz
@@ -1484,8 +1480,6 @@
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/flashcardApp.Client.pdb
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/Blazored.FluentValidation.dll
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/FluentValidation.dll
-/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/MediatR.dll
-/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/MediatR.Extensions.Microsoft.DependencyInjection.dll
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/Microsoft.AspNetCore.Authorization.dll
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/Microsoft.AspNetCore.Components.dll
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/Microsoft.AspNetCore.Components.Forms.dll
@@ -1697,8 +1691,6 @@
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/flashcardApp.Client.sourcelink.json
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/webcil/Blazored.FluentValidation.wasm
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/webcil/FluentValidation.wasm
-/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/webcil/MediatR.wasm
-/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/webcil/MediatR.Extensions.Microsoft.DependencyInjection.wasm
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/webcil/Microsoft.AspNetCore.Authorization.wasm
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/webcil/Microsoft.AspNetCore.Components.wasm
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/webcil/Microsoft.AspNetCore.Components.Forms.wasm
@@ -1908,8 +1900,6 @@
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/p6ih8fyh8j.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/22h2vfcbzn.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/5v6rkift8v.gz
-/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/ws56ridzay.gz
-/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/g5t7b15wuf.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/u2dyj0t4l9.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/vlcaidwz3d.gz
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/yjtdml6ynh.gz
@@ -2120,3 +2110,23 @@
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/refint/flashcardApp.Client.dll
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/flashcardApp.Client.pdb
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/ref/flashcardApp.Client.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.Extensions.Diagnostics.Abstractions.wasm
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.Extensions.Diagnostics.wasm
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.Extensions.Http.wasm
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.Extensions.Options.ConfigurationExtensions.wasm
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.Extensions.Diagnostics.wasm.gz
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.Extensions.Options.ConfigurationExtensions.wasm.gz
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.Extensions.Diagnostics.Abstractions.wasm.gz
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/wwwroot/_framework/Microsoft.Extensions.Http.wasm.gz
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/Microsoft.Extensions.Http.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/bin/Debug/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/webcil/Microsoft.Extensions.Diagnostics.wasm
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/webcil/Microsoft.Extensions.Diagnostics.Abstractions.wasm
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/webcil/Microsoft.Extensions.Http.wasm
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/webcil/Microsoft.Extensions.Options.ConfigurationExtensions.wasm
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/65fl8em2c3.gz
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/exibks7b10.gz
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/qrc9ugdp3b.gz
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/obj/Debug/net8.0/compressed/aoifxr8wrr.gz

@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AGgIGWI7Dps=",
+  "dgSpecHash": "4gSJSjtfAZI=",
   "success": true,
   "projectFilePath": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Shared/flashcardApp.Shared.csproj",
   "expectedPackageFiles": [
-    "/Users/rasmusjakobsen/.nuget/packages/fluentvalidation/10.3.3/fluentvalidation.10.3.3.nupkg.sha512",
-    "/Users/rasmusjakobsen/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512"
+    "/Users/rasmusjakobsen/.nuget/packages/fluentvalidation/10.3.3/fluentvalidation.10.3.3.nupkg.sha512"
   ],
   "logs": []
 }

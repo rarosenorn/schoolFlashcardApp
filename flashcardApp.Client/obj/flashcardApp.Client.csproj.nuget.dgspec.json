@@ -51,14 +51,6 @@
               "target": "Package",
               "version": "[2.0.1, )"
             },
-            "MediatR": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "MediatR.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -67,6 +59,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -154,10 +150,6 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[10.3.3, )"
-            },
-            "MediatR": {
-              "target": "Package",
-              "version": "[9.0.0, )"
             }
           },
           "imports": [

@@ -42,9 +42,9 @@
 </div>
 
 @code {
+    [Parameter, EditorRequired] public Action UpdateUi {get; set;}
     [Parameter, EditorRequired] public DeckDto Deck { get; set; }
     private bool _editOn;
-
     private FlashcardDto _currentFlashcard;
     private int _cardCounter = 0;
     private string _hideCss = "visibility: hidden";
@@ -63,12 +63,14 @@
         }
         _currentCss = _hideCss;
     }
+
     private void DeleteCardFromDeck()
     {
         if (_currentFlashcard != null)
         {
             Deck.Flashcards.Remove(_currentFlashcard);
             Deck.NumberOfCards--;
+            UpdateUi.Invoke();
             if (Deck.Flashcards.Any())
             {
                 _currentFlashcard = Deck.Flashcards[_cardCounter % Deck.Flashcards.Count()];
@@ -84,6 +86,7 @@
             Console.WriteLine("_currentFlashcard is null");
         }
     }
+
     private void ToggleEditMode()
     {
         _editOn = !_editOn;

@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "flashcardApp.Client",
   "resources": {
-    "hash": "sha256-KnhktaDGJn07FySIUPekMKplN2BVhLRR7PkThJybjVo=",
+    "hash": "sha256-rVhdTqkHn7muV/syM5RxrrlK+IyAqVvSe+J2XJ5Gh/o=",
     "jsModuleNative": {
       "dotnet.native.8.0.8.dkv4nakjiw.js": "sha256-juC5sA7gHTLXFEhAKgdM2/RavswpwCtDfjYGsAz2FXg="
     },
@@ -19,8 +19,6 @@
     "assembly": {
       "Blazored.FluentValidation.wasm": "sha256-G9IVFtND7p8qp4IFofEqqahbbJ1TgtZybKRRKcSSlOM=",
       "FluentValidation.wasm": "sha256-8v5arqSQvV39/l4X5AIPdilZHxb56fVBNRImw1ovKFY=",
-      "MediatR.wasm": "sha256-6rIgXkK0wosH2tLsZwaUqmlFQuBgfxcokOaiw9doMdo=",
-      "MediatR.Extensions.Microsoft.DependencyInjection.wasm": "sha256-1LFVX3soMuSmEyPIgmENRGAmeILACd4vRccjQxEvu/8=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-H1yH7iBNYt/rilvQT6qsv2frcFFOBUKBnRrGQ1AIHnI=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-kPAmhH4D4UN/DyWkGyB1Sxs7tQyVDV150swtUfTSJJ8=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-ZB9Iu49s5SYUpy+xnFe+KIg2LeHGglqjWkohvxQ8m30=",
@@ -32,14 +30,18 @@
       "Microsoft.Extensions.Configuration.Binder.wasm": "sha256-fNNlyyW44y8Gp6dvOtsvHoVNzpT8lrKmPleg5CDhRAo=",
       "Microsoft.Extensions.Configuration.FileExtensions.wasm": "sha256-w4E5uayo1SFMsRc1dLJu4EYYaRQpyP7cvyeJNAqH5+4=",
       "Microsoft.Extensions.Configuration.Json.wasm": "sha256-ViitoeUHw71Xhs0JJ88lGca05eRKDi+p+NyaYc6cRIQ=",
-      "Microsoft.Extensions.DependencyInjection.wasm": "sha256-NrPYML1ZOnKmz2Y+n4q5EFp+e4a6g47+gH22VofJd2k=",
-      "Microsoft.Extensions.DependencyInjection.Abstractions.wasm": "sha256-4m5J6D1UjtBYOyimRA7fLpV89WdlUi2OueAnc4PZQSk=",
+      "Microsoft.Extensions.DependencyInjection.wasm": "sha256-CS+QrPLaogl32aUg+ES1Ef5QGKoMyjt3V+wGoiG+tpw=",
+      "Microsoft.Extensions.DependencyInjection.Abstractions.wasm": "sha256-NICKEw2hjoBhl1lvxOBh8cxOIN8kkrGHz3pvV1eLLbY=",
+      "Microsoft.Extensions.Diagnostics.wasm": "sha256-MFVFI2HwI1mQqiiXvaLy8bt3VV9aPzyHpmctfcIyNc8=",
+      "Microsoft.Extensions.Diagnostics.Abstractions.wasm": "sha256-dpN/LMJr0L1oxGxMzPw+PC8Nkzf+2WG8a3ccmvA35DE=",
       "Microsoft.Extensions.FileProviders.Abstractions.wasm": "sha256-IUopixuV8E09mP+TIgRp/lXEbeacXbUTW7cu0v5B9Tc=",
       "Microsoft.Extensions.FileProviders.Physical.wasm": "sha256-MS+zB0xkKhKk/QdE32ZwKtdlrLMLI/y2NAKPUWhcBVg=",
       "Microsoft.Extensions.FileSystemGlobbing.wasm": "sha256-AnWUKd0qJ8ZNKkRC0AFK2cjjszB7reXiP+bXdIi8bic=",
-      "Microsoft.Extensions.Logging.wasm": "sha256-Rx+UwnmyfTtMmlYd3HWJOvYVnSSwShUKrbPvqkfxmZk=",
-      "Microsoft.Extensions.Logging.Abstractions.wasm": "sha256-AL42sVLgQf/nX/uHvd/OHfIFwLq3fRt9qn4/jnfJ2CM=",
+      "Microsoft.Extensions.Http.wasm": "sha256-N+Tzkk/w6KHM7RAL+KgJZSEePxW2/p5DHYG8y6zUPx0=",
+      "Microsoft.Extensions.Logging.wasm": "sha256-pa0M3exxNvk6g5anUwlaPC99Afawsi1GZvJeU1q/ZGM=",
+      "Microsoft.Extensions.Logging.Abstractions.wasm": "sha256-glWux6/5FFNJxVrbRPQ/PhLriEkSd3TllLfjmvZbpKw=",
       "Microsoft.Extensions.Options.wasm": "sha256-5/m+yVFGRuY+N4jQnD+QETKH0AfhAsnVze5dJ5ogIVM=",
+      "Microsoft.Extensions.Options.ConfigurationExtensions.wasm": "sha256-C8ZA1VhhrMRPf8Qqv+OrW9za3ggJkCM9i1d8R/F1ETc=",
       "Microsoft.Extensions.Primitives.wasm": "sha256-pVrYOTfjb2ITls3LKIByW1t8jwOAWFhmkIVDewtJ1GE=",
       "Microsoft.JSInterop.wasm": "sha256-okH//v00d9qA97lMQaTcXOMrfK8IIcOYOfzcEhcQle8=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-FWBbfufvNOmor0iVsxtEPG3l1VI97wMYStE1/bHHo9w=",
@@ -212,16 +214,19 @@
       "mscorlib.wasm": "sha256-Gz8PyW2/fwihe5ul81OwmRUrU71r+KtbyRw6xlOGD+Q=",
       "netstandard.wasm": "sha256-jMTqIQzoDS810lyhZpMO5eEC36EzntXqSVn+2qwkOMQ=",
       "System.Private.CoreLib.wasm": "sha256-NFj5WE5VLP2LptZIRJCUIc1AMk06FmxpsSILfPISwAw=",
-      "flashcardApp.Shared.wasm": "sha256-VMVQdmwqNuZ0NcI5Aow5eVcieQfPcbgWVJQwXF+OwWI=",
-      "flashcardApp.Client.wasm": "sha256-HD/+jZiGw8yi6jsifH75mz5qaHJMyLAuU8oFAhPAvas="
+      "flashcardApp.Shared.wasm": "sha256-p/tScs+anebw+VW5Bk96TFHs2nmN0q/MS4gSKmMzqFI=",
+      "flashcardApp.Client.wasm": "sha256-EINA8DFP9JkGyjPF5dXDx+5TkIPw3HOynRefR/PJFmo="
     },
     "pdb": {
-      "flashcardApp.Shared.pdb": "sha256-lNbOdnXF8g7TtElBq59tgB0lICkPHSHimLJHbxGiNKQ=",
-      "flashcardApp.Client.pdb": "sha256-vAVXAn17ydGmUGtvWFQJvxdfW6EwbPKS05HMMlCf3/Y="
+      "flashcardApp.Shared.pdb": "sha256-uNRfswQ49hsoCg5sPsKx0RL0Bh4SkiY82JZGa0s5zzs=",
+      "flashcardApp.Client.pdb": "sha256-He3Ik40mfmBzpB0oFfHBlZn+UgDUiEu22gjskmXOQ6w="
     }
   },
   "cacheBootResources": true,
   "debugLevel": -1,
+  "appsettings": [
+    "../appsettings.Development.json"
+  ],
   "globalizationMode": "sharded",
   "extensions": {
     "blazor": {}

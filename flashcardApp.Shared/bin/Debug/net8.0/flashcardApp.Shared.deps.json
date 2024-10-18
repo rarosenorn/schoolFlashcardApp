@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "flashcardApp.Shared/1.0.0": {
         "dependencies": {
-          "FluentValidation": "10.3.3",
-          "MediatR": "9.0.0"
+          "FluentValidation": "10.3.3"
         },
         "runtime": {
           "flashcardApp.Shared.dll": {}
@@ -20,14 +19,6 @@
           "lib/net5.0/FluentValidation.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "10.3.3.0"
-          }
-        }
-      },
-      "MediatR/9.0.0": {
-        "runtime": {
-          "lib/netstandard2.1/MediatR.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.0.0"
           }
         }
       }
@@ -45,13 +36,6 @@
       "sha512": "sha512-sgRC+7q4mnmDHE9ehk2cvb+FDTy/gtw5iBoKFY3FVp1ZwFsLS0kIcdSpNlCO3XyyNIzZI2ca8I/YiFG9pM6x0Q==",
       "path": "fluentvalidation/10.3.3",
       "hashPath": "fluentvalidation.10.3.3.nupkg.sha512"
-    },
-    "MediatR/9.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
-      "path": "mediatr/9.0.0",
-      "hashPath": "mediatr.9.0.0.nupkg.sha512"
     }
   }
 }

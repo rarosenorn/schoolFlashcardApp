@@ -1,5 +1,5 @@
 @page "/DeckPage/{DeckId:int}"
-@inject IMediator Mediator
+@inject IDecksService DecksService
 @if (_deck is not null)
 {
     <div class="deckview-container">
@@ -7,7 +7,8 @@
     <p># of cards in <span class="deckname">@_deck.Name</span>: <span class="numberofcards">@_deck.NumberOfCards</span>
     </p>
 
-    <StudyDeck Deck="@_deck"/>
+    <StudyDeck Deck="@_deck" UpdateUi="UpdateUi"/>
+
     <hr width="100%">
     <AddCard Deck="@_deck" OnCardAdded="UpdateUi"/>
     </div>
@@ -24,37 +25,10 @@
     }
     private async Task Save()
     {
-        var response = await Mediator.Send(new EditDeckRequest(_deck));
-        if (response.IsSuccess)
-        {
-            _saveMessage = "it worked!";
-        }
+        _saveMessage = await DecksService.UpdateDeckAsync(_deck);
     }
     protected override async Task OnInitializedAsync()
     {
-        try
-        {
-            var response = await Mediator.Send(new GetDeckRequest(DeckId));
-            _deck = new DeckDto
-                {
-                    Id = response.Deck.Id,
-                    Name = response.Deck.Name,
-                    Topic = response.Deck.Topic,
-                    NumberOfCards = response.Deck.NumberOfCards,
-                    Stars = response.Deck.Stars,
-                    Flashcards = response.Deck.Flashcards.Select(x => new FlashcardDto
-                    {
-                        Id = x.Id,
-                        Frontside = x.Frontside,
-                        Backside = x.Backside,
-                        SubTopic = x.SubTopic,
-                        DeckId = x.DeckId
-                    }).ToList()
-                };
-        }
-        catch (HttpRequestException ex)
-        {
-            Console.WriteLine($"There was a problem loading Deck Data: {ex.Message}");
-        }
+        _deck = await DecksService.GetDeckByIdAsync(DeckId);
     }
 }

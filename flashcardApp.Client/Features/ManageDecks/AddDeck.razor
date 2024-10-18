@@ -1,4 +1,4 @@
-@inject IMediator Mediator
+@inject IDecksService DecksService
 
 <div id="CreateDeck">
     <button @onclick="ShowCreateDeck">
@@ -15,7 +15,7 @@
     {
         @if (_submitSuccessful)
         {
-            <SuccessAlert Message="Your trail has been added successfully!" />
+            <SuccessAlert Message="Your deck has been added successfully!" />
         }
         else if (_errorMessage is not null)
         {
@@ -46,16 +46,10 @@
     }
     private async Task SubmitForm()
     {
-        var response = await Mediator.Send(new AddDeckRequest(_deck));
-        if(response.DeckId == -1)
-        {
-            _errorMessage = "There was un problemo with saving the deck";
-            _submitSuccessful = false;
-            return;
-        }
+        await DecksService.CreateDeckAsync(_deck);
         _deck = new DeckDto();
-        _errorMessage = null;
         _submitSuccessful = true;
+        _errorMessage = "nope";
         await OnSubmitForm.InvokeAsync();
     }
 }

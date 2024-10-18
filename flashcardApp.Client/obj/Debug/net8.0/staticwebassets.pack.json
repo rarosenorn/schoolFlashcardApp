@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/flashcardApp.Client.styles.css"
     },
     {
+      "Id": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/appsettings.Development.json",
+      "PackagePath": "staticwebassets/appsettings.Development.json"
+    },
+    {
       "Id": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/css/app.css",
       "PackagePath": "staticwebassets/css/app.css"
     },

@@ -191,8 +191,6 @@
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/Humanizer.dll
-/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/MediatR.dll
-/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/MediatR.Extensions.Microsoft.DependencyInjection.dll
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/Microsoft.AspNetCore.Authorization.dll
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/Microsoft.AspNetCore.Components.dll
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/Microsoft.AspNetCore.Components.Forms.dll
@@ -338,3 +336,11 @@
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/obj/Debug/net8.0/flashcardApp.Api.pdb
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/obj/Debug/net8.0/flashcardApp.Api.genruntimeconfig.cache
 /Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/obj/Debug/net8.0/ref/flashcardApp.Api.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/Microsoft.Extensions.Http.dll
+/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Api/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
