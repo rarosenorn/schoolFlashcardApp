@@ -21,14 +21,6 @@
       "PackagePath": "staticwebassets/css/app.css"
     },
     {
-      "Id": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/css/bootstrap/bootstrap.min.css",
-      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
-    },
-    {
-      "Id": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/css/bootstrap/bootstrap.min.css.map",
-      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
-    },
-    {
       "Id": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/favicon.png",
       "PackagePath": "staticwebassets/favicon.png"
     },
@@ -41,8 +33,12 @@
       "PackagePath": "staticwebassets/index.html"
     },
     {
-      "Id": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/sample-data/weather.json",
-      "PackagePath": "staticwebassets/sample-data/weather.json"
+      "Id": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/script.js",
+      "PackagePath": "staticwebassets/script.js"
+    },
+    {
+      "Id": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/site.js",
+      "PackagePath": "staticwebassets/site.js"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.flashcardApp.Client.props",

@@ -1,4 +1,6 @@
-﻿<aside>
+﻿@inject IJSRuntime JSRuntime
+
+<aside>
     <nav>
         <ul>
             <li><NavLink href=""><img style="width: 70%" src="elephantLogo.png"/></NavLink></li>
@@ -8,4 +10,13 @@
             <li><NavLink href="HowFlashcards">Creating Good Flashcards</NavLink></li>
         </ul>
     </nav>
+    <button @onclick="ShowAlert">Login</button>
 </aside>
+
+@code {
+    private void ShowAlert()
+    {
+        var jsInProcess = (IJSInProcessRuntime)JSRuntime;
+        jsInProcess.InvokeVoidAsync("showAlert", "Unknown user");
+    }
+} 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8+A9pEFdOJWiEf300mf34siGeM1NH0j8GZobz960AhM=",
+  "Hash": "uiwD+kPrNszZzIsH3Fah5RNIF1XZGGpVS31QqnWeXtA=",
   "Source": "flashcardApp.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -8149,44 +8149,6 @@
       "OriginalItemSpec": "wwwroot/css/app.css"
     },
     {
-      "Identity": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/css/bootstrap/bootstrap.min.css",
-      "SourceId": "flashcardApp.Client",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "css/bootstrap/bootstrap.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/bootstrap/bootstrap.min.css"
-    },
-    {
-      "Identity": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/css/bootstrap/bootstrap.min.css.map",
-      "SourceId": "flashcardApp.Client",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "css/bootstrap/bootstrap.min.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/bootstrap/bootstrap.min.css.map"
-    },
-    {
       "Identity": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/favicon.png",
       "SourceId": "flashcardApp.Client",
       "SourceType": "Discovered",
@@ -8244,12 +8206,12 @@
       "OriginalItemSpec": "wwwroot/index.html"
     },
     {
-      "Identity": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/sample-data/weather.json",
+      "Identity": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/script.js",
       "SourceId": "flashcardApp.Client",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/",
       "BasePath": "/",
-      "RelativePath": "sample-data/weather.json",
+      "RelativePath": "script.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -8260,7 +8222,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/sample-data/weather.json"
+      "OriginalItemSpec": "wwwroot/script.js"
+    },
+    {
+      "Identity": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/site.js",
+      "SourceId": "flashcardApp.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/rasmusjakobsen/projects/flashcardApp/flashcardApp.Client/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "site.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/site.js"
     }
   ]
 }

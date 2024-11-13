@@ -1,20 +1,33 @@
 ﻿@page "/"
+@inject IJSRuntime JSRuntime
 
 <PageTitle>Home</PageTitle>
 
 <h1>Welcome to Flashcard App</h1>
-
-<h2>Counter</h2>
-
-<p role="status">Current count: @currentCount</p>
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+@if (_book != null)
+{
+    <p>Title: @_book.Title, Author: @_book.Author Price: @_book.Price</p>
+}
 
 @code {
-    private int currentCount = 0;
-
-    private void IncrementCount()
+    private Book _book { get; set; }
+    protected async override Task OnInitializedAsync()
     {
-currentCount++;
+        try
+        {
+            var module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "/script.js");
+            _book = await module.InvokeAsync<Book>("getRandomBook");
+        }
+        catch
+        {
+            Console.WriteLine("somting wong");
+        }
+    }
+
+    class Book
+    {
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public decimal Price { get; set; }
     }
 }
